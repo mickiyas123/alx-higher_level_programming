@@ -5,7 +5,7 @@ if number < 0:
     number = number * -1
     ld = number % 10
     if ld == 0:
-        print("Last digit of {} is {} and is 0".format(number, ld))
+        print("Last digit of {} is {} and is 0".format(number * -1, ld))
     else:
         print("Last digit of {} is {} and is less than 6 and not 0".format(number * -1, ld * -1))
 else:
