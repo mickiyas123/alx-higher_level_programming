@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import random
-number = 5169
+number = random.randint(-10000, 10000)
 if number < 0:
     number = number * -1
     ld = number % 10
