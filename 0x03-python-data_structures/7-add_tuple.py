@@ -17,7 +17,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
             tuple_b = tuple(new_list)
             c = tuple(x + y for x, y in zip(tuple_a, tuple_b))
             return (c)
-
-
-
-
