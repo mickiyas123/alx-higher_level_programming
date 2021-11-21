@@ -6,6 +6,6 @@ def print_matrix_integer(matrix=[[]]):
         for row in matrix:
             for column in row:
                 if column % 3 == 0:
-                    print("{}".format(column))
+                    print("{:d}".format(column))
                 else:
-                    print("{}".format(column), end=' ')
+                    print("{:d}".format(column), end = ' ')
