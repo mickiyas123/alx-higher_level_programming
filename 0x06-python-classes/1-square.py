@@ -2,6 +2,7 @@
 
 """A class with size attribute of a sqaure"""
 
+
 class Square:
     """A class with size attribute of a square."""
 
