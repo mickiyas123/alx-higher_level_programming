@@ -6,13 +6,14 @@
 class Square:
     """A square class that prints a square size hashtags(#)"""
 
-    def __init__(self, size=0, poistion=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Inits Square.
 
         Args:
             size: size of the square
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -50,12 +51,14 @@ class Square:
         Attr:
             position: position of square
         """
-        if type(position) != tuple:
+        if type(position) == tuple:
+            for i in position:
+                if type(i) == int and i > 0:
+                    self.__position = position
+        elif len(position) < 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        for i in position:
-            if type(i) != int:
-                raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """A method for calculating area"""
