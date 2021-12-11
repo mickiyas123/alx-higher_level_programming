@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 
 """A square class that prints a square size hashtags(#)"""
 
@@ -50,5 +49,5 @@ class Square:
         else:
             for i in range(self.__size):
                 for j in range(self.__size):
-                    print("#", file=sys.stdout, end="")
+                    print("#", end="")
                 print()
