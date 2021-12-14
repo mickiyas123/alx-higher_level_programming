@@ -77,7 +77,7 @@ class Rectangle:
         """ A method for printing rectangle of # """
         newstr = ""
         if self.__height == 0 or self.__width == 0:
-            print()
+            return newstr
         for i in range(self.__height):
             for j in range(self.__width):
                 newstr += "#"
