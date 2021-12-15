@@ -38,7 +38,7 @@ class Rectangle:
         Args:
             width: width of the rectangle
         """
-        if type(width) != int:
+        if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width < 0:
             raise ValueError("width must be >= 0")
@@ -61,7 +61,7 @@ class Rectangle:
         Args:
             height: height of the rectangle
         """
-        if type(height) != int:
+        if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height < 0:
             raise ValueError("height must be >= 0")
@@ -85,7 +85,7 @@ class Rectangle:
             return newstr
         for i in range(self.__height):
             for j in range(self.__width):
-                newstr += Rectangle.print_symbol
+                newstr += str(self.print_symbol)
             if i != self.__height - 1:
                 newstr += "\n"
         return newstr
