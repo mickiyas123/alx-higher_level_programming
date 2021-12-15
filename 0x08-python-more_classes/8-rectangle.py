@@ -70,8 +70,7 @@ class Rectangle:
 
     def area(self):
         """ A method for returning area of rectangle """
-        area = self.__width * self.__height
-        return area
+        return self.__width * self.__height
 
     def perimeter(self):
         """ A method for returning perimeter of a rectnagle """
