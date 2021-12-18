@@ -9,11 +9,9 @@
 def matrix_divided(matrix, div):
     """ matrix_divided function that
         divdes elements in a matrix
-
         Args:
             matrix: matrix
             div: number where each value elements will be dived by
-
         Return:
             A new matrix
     """
@@ -23,7 +21,7 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError('division by zero')
-    if type(div) is not int or type(div) is not float:
+    if type(div) == str:
         raise TypeError('div must be a number')
 
     first = len(new_matrix[0])
