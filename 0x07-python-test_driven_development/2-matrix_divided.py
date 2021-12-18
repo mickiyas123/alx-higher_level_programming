@@ -23,17 +23,19 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError('division by zero')
+    if type(div) == str:
+        raise TypeError('div must be a number')
 
     first = len(new_matrix[0])
 
     for i in range(len(new_matrix)):
-        if len(new_matrix[i]) is not first:
+        if len(new_matrix[i]) != first:
             raise TypeError('Each row of the matrix must have the same size')
         for j in range(len(new_matrix[i])):
             if type(new_matrix[i][j]) is int:
                 new_matrix[i][j] = round(new_matrix[i][j] / div, 2)
             elif type(new_matrix[i][j]) is float:
                 new_matrix[i][j] = round(new_matrix[i][j] / div, 2)
-            else:
+            elif type(new_matrix[i][j]) is str:
                 raise TypeError(message)
     return new_matrix
