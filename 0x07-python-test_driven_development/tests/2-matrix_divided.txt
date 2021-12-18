@@ -58,3 +58,6 @@ Now test it:
 	>>> matrix_divided(matrix, "2")
 	Traceback (most recent call last):
 	TypeError: div must be a number
+
+	>>> matrix_divided([[3, 9], [12, 3]], float('inf')) 
+	[[0.0, 0.0], [0.0, 0.0]]
