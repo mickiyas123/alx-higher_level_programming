@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError('division by zero')
-    if type(div) == str:
+    if type(div) is not int or type(div) is not float:
         raise TypeError('div must be a number')
 
     first = len(new_matrix[0])
