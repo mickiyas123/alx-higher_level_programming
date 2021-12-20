@@ -43,3 +43,15 @@ Now test it:
 
 	>>> my_list.print_sorted()
 	[]
+
+	>>> my_list = MyList()
+	>>> my_list.append('x')
+        >>> my_list.append('k')
+        >>> my_list.append('o')
+        >>> my_list.append('g')
+        >>> my_list.append('e')
+	>>> my_list
+	['x', 'k', 'o', 'g', 'e']
+	
+	>>> my_list.print_sorted()
+	['e', 'g', 'k', 'o', 'x']
