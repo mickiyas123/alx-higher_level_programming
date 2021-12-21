@@ -6,13 +6,11 @@
 def to_json_string(my_obj):
     """ a function that returns the JSON representation
         of an object (string)
-
         Args:
             my_obj: data to be changed to json
-
         Return:
             Json representation of an object
     """
     import json
 
-    return json.dumps(my_obj)
+    return json.JSONEncoder().encode(my_obj)
