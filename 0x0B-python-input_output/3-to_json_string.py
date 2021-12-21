@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 
+import json
+
 """ Module 3-to_json_string that changes string to Json """
 
 
 def to_json_string(my_obj):
-    import json
     """ a function that returns the JSON representation
         of an object (string)
 
@@ -14,5 +15,4 @@ def to_json_string(my_obj):
         Return:
             Json representation of an object
     """
-    e = json.JSONEncoder()
-    return e.encode(my_obj)
+    return json.JSONEncoder().encode(my_obj)
