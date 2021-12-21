@@ -14,4 +14,5 @@ def to_json_string(my_obj):
         Return:
             Json representation of an object
     """
-    return (json.dumps(my_obj, sort_keys=True))
+    e = json.JSONEncoder()
+    return e.encode(my_obj)
