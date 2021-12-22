@@ -30,8 +30,8 @@ class Student:
                 attributes in attrs
 
         """
-        if attrs is None or len(attrs) == 0:
-            return self.__dict__
-        else:
+        if type(attrs) is list and all(type(attr) is str for attr in attrs):
             return {key: self.__dict__[key] for key in self.__dict__
                     if key in attrs}
+        else:
+            return self.__dict__
