@@ -30,9 +30,8 @@ class Student:
                 attributes in attrs
 
         """
-        if len(attrs) == 0:
+        if attrs is None or len(attrs) == 0:
             return self.__dict__
-        if attrs:
+        else:
             return {key: self.__dict__[key] for key in self.__dict__
                     if key in attrs}
-        return self.__dict__
