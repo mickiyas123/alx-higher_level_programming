@@ -43,5 +43,8 @@ class Student:
             Args:
                 json: dict of mutable atributes
         """
-        self.__dict__ = json
-        return self.__dict__
+        if len(json) == 0:
+            return self.__dict__
+        else:
+            self.__dict__ = json
+            return self.__dict__
