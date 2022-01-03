@@ -94,12 +94,13 @@ class Base:
 
             Return:
                 returns an instance with all attributes already set
-
         """
-        key_list = list(dictionary.keys())
-        tr = cls(4, 5)
-        tr.update(**dictionary)
-        return tr
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
