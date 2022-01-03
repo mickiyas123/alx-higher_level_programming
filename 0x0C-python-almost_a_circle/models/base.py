@@ -58,8 +58,7 @@ class Base:
                 if isinstance(list_obj, cls):
                     new_list_obj.append(list_obj.to_dictionary())
 
-            json_dict = Base.to_json_string(new_list_obj)
-
+            json_dict = json.loads(Base.to_json_string(new_list_obj))
             with open(filename, "w") as f:
                 json.dump(json_dict, f)
 
@@ -96,9 +95,11 @@ class Base:
 
         """
         tr = cls(4, 5)
-        tr.update(x=dictionary['x'], y=dictionary['y'])
+        for key, val in dictionary.items():
+            tr.update(key=val)
+        '''tr.update(x=dictionary['x'], y=dictionary['y'])
         tr.update(width=dictionary['width'], id=dictionary['id'])
-        tr.update(height=dictionary['height'])
+        tr.update(height=dictionary['height'])'''
         return tr
 
     @classmethod
