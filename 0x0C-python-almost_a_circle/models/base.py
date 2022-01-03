@@ -57,9 +57,10 @@ class Base:
             for list_obj in list_objs:
                 if isinstance(list_obj, cls):
                     new_list_obj.append(list_obj.to_dictionary())
-
+            
+            json_dict = json.loads(Base.to_json_string(new_list_obj))
             with open(filename, "w") as f:
-                json.dump(new_list_obj, f)
+                json.dump(json_dict, f)
 
         else:
             open(filename, "w").close()
