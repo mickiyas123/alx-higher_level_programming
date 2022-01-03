@@ -95,7 +95,7 @@ class Base:
                 returns an instance with all attributes already set
 
         """
-        tr = cls(4, 5, 2, 12, )
+        tr = cls(4, 5)
         tr.update(x=dictionary['x'], y=dictionary['y'])
         tr.update(width=dictionary['width'], id=dictionary['id'])
         tr.update(height=dictionary['height'])
