@@ -63,7 +63,9 @@ class Base:
                 json.dump(json_dict, f)
 
         else:
-            open(filename, "w").close()
+            empty_list = []
+            with open(filename, "w") as f:
+                file.write(empty_list)
 
     @staticmethod
     def from_json_string(json_string):
@@ -95,8 +97,7 @@ class Base:
 
         """
         tr = cls(4, 5)
-        for key, val in dictionary.items():
-            tr.update(key=val)
+        tr.update(dictionary)
         '''tr.update(x=dictionary['x'], y=dictionary['y'])
         tr.update(width=dictionary['width'], id=dictionary['id'])
         tr.update(height=dictionary['height'])'''
