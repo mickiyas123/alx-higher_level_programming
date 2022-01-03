@@ -63,9 +63,7 @@ class Base:
                 json.dump(json_dict, f)
 
         else:
-            empty_list = []
-            with open(filename, "w") as f:
-                file.write(empty_list)
+            json_dict = Base.to_json_string(list_objs)
 
     @staticmethod
     def from_json_string(json_string):
