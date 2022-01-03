@@ -96,11 +96,9 @@ class Base:
                 returns an instance with all attributes already set
 
         """
+        key_list = list(dictionary.keys())
         tr = cls(4, 5)
-        tr.update(dictionary)
-        '''tr.update(x=dictionary['x'], y=dictionary['y'])
-        tr.update(width=dictionary['width'], id=dictionary['id'])
-        tr.update(height=dictionary['height'])'''
+        tr.update(**dictionary)
         return tr
 
     @classmethod
