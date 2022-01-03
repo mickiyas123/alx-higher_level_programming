@@ -63,7 +63,7 @@ class Base:
                 json.dump(json_dict, f)
 
         else:
-            open(filename, "a").close()
+            open(filename, "w").close()
 
     @staticmethod
     def from_json_string(json_string):
