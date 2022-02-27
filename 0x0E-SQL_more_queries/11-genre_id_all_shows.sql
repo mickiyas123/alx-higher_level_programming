@@ -1,6 +1,3 @@
 -- Import the database dump of hbtn_0d_tvshows
 -- script that lists all shows contained in the database hbtn_0d_tvshows
-SELECT tv_shows.title, tv_show_genres.genre_id
-FROM tv_shows LEFT JOIN tv_show_genres
-ON tv_shows.id = tv_show_genres.show_id
-ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
+SELECT ts.title, tsg.genre_id FROM tv_shows ts LEFT JOIN tv_show_genres tsg ON ts.id = tsg.show_id ORDER BY ts.title, tsg.genre_id;
