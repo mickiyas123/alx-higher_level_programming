@@ -9,7 +9,7 @@ if (isNaN(myVar)) {
   let j;
   for (i = 0; i < myVar; i++) {
     for (j = 0; j < myVar; j++) {
-      stringSquare += '*';
+      stringSquare += 'X';
     }
     if (i !== myVar - 1) {
       stringSquare += '\n';
