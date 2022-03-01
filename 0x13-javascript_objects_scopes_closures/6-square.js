@@ -6,10 +6,10 @@ class Square extends Rectangle {
   }
 
   charPrint (c) {
+    let i;
+    let j;
+    let output = '';
     if (c === undefined) {
-      let i;
-      let j;
-      let output = '';
       for (i = 0; i < this.height; i++) {
         for (j = 0; j < this.width; j++) {
           output += 'X';
@@ -20,9 +20,6 @@ class Square extends Rectangle {
       }
       console.log(output);
     } else {
-      let i;
-      let j;
-      let output = '';
       for (i = 0; i < this.height; i++) {
         for (j = 0; j < this.width; j++) {
           output += 'C';
