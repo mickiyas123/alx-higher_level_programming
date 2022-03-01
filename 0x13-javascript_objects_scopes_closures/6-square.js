@@ -22,7 +22,7 @@ class Square extends Rectangle {
     } else {
       for (i = 0; i < this.height; i++) {
         for (j = 0; j < this.width; j++) {
-          output += 'C';
+          output += c;
         }
         if (i !== this.height - 1) {
           output += '\n';
