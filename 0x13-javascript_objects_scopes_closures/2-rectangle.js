@@ -1,9 +1,7 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    if (w <= 0 || h <= 0 || h === undefined || w === undefined) {
-      return Rectangle.this;
-    } else {
+    if ((w = parseInt(w)) > 0) && ((h = parseInt(h)) > 0) {
       this.width = w;
       this.height = h;
     }
