@@ -19,7 +19,7 @@ if __name__ == '__main__':
             host='localhost',
             port=3306,
             user=user,
-            passwd=passwd,
+            passwd='ktmnaa?',
             db=database)
 
     cur = conn.cursor()
