@@ -14,12 +14,13 @@ if __name__ == '__main__':
     passwd = sys.argv[2]
     database = sys.argv[3]
     ui = sys.argv[4]  # ui = userinput
+    newinput = ui.split("'")
 
     conn = sql.connect(
             host='localhost',
             port=3306,
             user=user,
-            passwd=passwd,
+            passwd='ktmnaa?',
             db=database)
 
     cur = conn.cursor()
@@ -28,7 +29,7 @@ if __name__ == '__main__':
         FROM states s\
         JOIN cities c\
         ON s.id = c.state_id\
-        WHERE s.name = '{}' ORDER BY c.id".format(ui))
+        WHERE s.name = '{}' ORDER BY c.id".format(newinput[0]))
 
     rows = cur.fetchall()
 
