@@ -21,12 +21,15 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM cities ORDER BY cities.id")
+    cur.execute("""SELECT c.id, c.name, s.name
+                FROM cities c
+                JOIN states s
+                ON c.state_id=s.id
+                ORDER BY c.id ASC""")
 
     rows = cur.fetchall()
-
     for row in rows:
-        print(row)
+        print("{}".format(row))
 
     cur.close()
     conn.close()
