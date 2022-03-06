@@ -30,7 +30,9 @@ if __name__ == '__main__':
 
     rows = cur.fetchall()
 
-    print("{}".format(rows[0]))
+    for row in rows:
+        if row[1] == userinput:
+            print("{}".format(row))
 
     cur.close()
     conn.close()
