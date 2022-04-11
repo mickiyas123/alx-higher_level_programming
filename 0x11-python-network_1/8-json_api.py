@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 print("[{}] {}".format(
                     response.json()['id'],
                     response.json()["name"]))
-                else:
-                    print("Not a valid JSON")
+            else:
+                print("Not a valid JSON")
     elif len(sys.argv) == 1:
         print("No result")
