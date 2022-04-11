@@ -17,8 +17,8 @@ if __name__ == "__main__":
                     data={'q': sys.argv[1]})
             if response:
                 print("[{}] {}".format(
-                    response.json()['id'],
-                    response.json()["name"]))
+                    response.json().get['id'],
+                    response.json().get["name"]))
             else:
                 print("Not a valid JSON")
     elif len(sys.argv) == 1:
