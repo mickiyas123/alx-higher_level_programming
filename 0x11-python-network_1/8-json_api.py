@@ -16,9 +16,10 @@ if __name__ == "__main__":
                     "http://0.0.0.0:5000/search_user",
                     data={'q': sys.argv[1]})
             if response:
+                new_dict = response.json()
                 print("[{}] {}".format(
-                    response.json().get['id'],
-                    response.json().get["name"]))
+                    new_dict['id'],
+                    new_dict["name"]))
             else:
                 print("Not a valid JSON")
     elif len(sys.argv) == 1:
