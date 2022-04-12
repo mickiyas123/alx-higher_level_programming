@@ -14,9 +14,8 @@ if __name__ == "__main__":
     headers = {'Authorization': token}
     response = requests.get(
             "https://api.github.com/users/{}"
-            .format(user),
-            headers=headers)
-    if response.json():
-        print(response.json()["id"])
+            .format(user), headers=headers)
+    if response.status_code < 400:
+        print(response.json()['id'])
     else:
         print("None")
