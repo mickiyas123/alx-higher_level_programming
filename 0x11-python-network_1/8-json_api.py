@@ -15,7 +15,9 @@ if __name__ == "__main__":
             response = requests.post(
                     "http://0.0.0.0:5000/search_user",
                     data={'q': sys.argv[1]})
-            if response:
+            if response.json() == {}:
+                print("No result")
+            elif response.json() != {}:
                 new_dict = response.json()
                 print("[{}] {}".format(
                     new_dict['id'],
