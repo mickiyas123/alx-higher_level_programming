@@ -15,10 +15,10 @@ if __name__ == "__main__":
             .format(owner, repo))
 
     auth_json = response.json()
-    count = 0
 
-    for i in auth_json:
-        print("{}: {}".format(i["sha"], i["commit"]["author"]["name"]))
-        count = count + 1
-        if (count == 10):
-            break
+    for comm in auth_json[:10]:
+        print("{}: {}".format(
+            comm.get("sha"),
+            comm.get("commit")
+            .get("author")
+            .get("name")))
