@@ -7,8 +7,8 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    owner = sys.argv[1]
-    repo = sys.argv[2]
+    repo = sys.argv[1]
+    owner = sys.argv[2]
 
     response = requests.get(
             "https://api.github.com/repos/{}/{}/commits"
