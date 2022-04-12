@@ -8,21 +8,20 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    if len(sys.argv) == 2:
-        if sys.argv[1].isdigit():
+    q = sys.argv[1] if len(sys.argv) > 1 else ""
+    payload = {'q': q}
+
+    response = requests.post(
+            "http://0.0.0.0:5000/search_user",
+            data=payload)
+    try:
+        json_dict = response.json()
+
+        if json_dict == {}:
             print("No result")
         else:
-            response = requests.post(
-                    "http://0.0.0.0:5000/search_user",
-                    data={'q': sys.argv[1]})
-            if response.json() == {}:
-                print("No result")
-            elif response.json() != {}:
-                new_dict = response.json()
-                print("[{}] {}".format(
-                    new_dict['id'],
-                    new_dict["name"]))
-            else:
-                print("Not a valid JSON")
-    elif len(sys.argv) == 1:
-        print("No result")
+            print("[{}] {}".format(
+                    json_dict['id'],
+                    json_dict["name"]))
+    except ValueError:
+        print("Not a valid JSON")
