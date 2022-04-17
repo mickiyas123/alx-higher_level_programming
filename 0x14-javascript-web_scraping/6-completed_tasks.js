@@ -4,7 +4,7 @@ request(process.argv[2], function (error, response, body) {
   if (error) {
     console.log(error);
   }
-  const x = {};
+  let x = {};
   const usersIdSet = new Set();
   const todos = JSON.parse(body);
   for (const user of todos) {
@@ -20,7 +20,11 @@ request(process.argv[2], function (error, response, body) {
         }
       }
     }
-    x[userIdArray[i]] = complete;
+    if (complete === 0) {
+      x = {};
+    } else {
+      x[userIdArray[i]] = complete;
+    }
   }
   console.log(x);
 });
