@@ -1,30 +1,26 @@
 #!/usr/bin/node
 const request = require('request');
-request('https://jsonplaceholder.typicode.com/users', function (error, response, body) {
+request(process.argv[2], function (error, response, body) {
   if (error) {
     console.log(error);
   }
   const x = {};
-  let c = 0;
-  const users = JSON.parse(body);
-  for (let k = 0; k < users.length; k++) {
-    request(process.argv[2], function (error, response, body) {
-      if (error) {
-        console.log(error);
-      }
-      let i = 0;
-      for (const todo of JSON.parse(body)) {
-        if (users[k].id === todo.userId) {
-          if (todo.completed === true) {
-            i++;
-          }
+  const usersIdSet = new Set();
+  const todos = JSON.parse(body);
+  for (const user of todos) {
+    usersIdSet.add(user.userId);
+  }
+  const userIdArray = Array.from(usersIdSet);
+  for (let i = 0; i < userIdArray.length; i++) {
+    let complete = 0;
+    for (const todo of todos) {
+      if (userIdArray[i] === todo.userId) {
+        if (todo.completed === true) {
+          complete++;
         }
       }
-      c++;
-      x[users[k].id] = i;
-      if (c === users.length) {
-        console.log(x);
-      }
-    });
+    }
+    x[userIdArray[i]] = complete;
   }
+  console.log(x);
 });
